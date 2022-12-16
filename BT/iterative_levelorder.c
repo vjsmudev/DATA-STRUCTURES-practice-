@@ -1,6 +1,44 @@
 //Iterative inorder,postorder,preorder traversal
 //Level order traversal
 
+/*Algorithms for Iterative inorder,postorder,preorder traversal
+
+Iterative inorder
+1) Create an empty stack S.
+2) Initialize current node as root
+3) Push the current node to S and set current = current->left until current is NULL
+4) If current is NULL and stack is not empty then 
+     a) Pop the top item from stack.
+     b) Print the popped item, set current = popped_item->right 
+     c) Go to step 3.
+5) If current is NULL and stack is empty then we are done.
+
+Iterative preorder 
+1.Create an empty stack nodeStack and push root node to stack. 
+2.Do the following while nodeStack is not empty. 
+-Pop an item from the stack and print it. 
+-Push right child of a popped item to stack 
+-Push left child of a popped item to stack
+
+Iterative postorder
+1.1 Create an empty stack
+2.1 Do following while root is not NULL
+    a) Push root's right child and then root to stack.
+    b) Set root as root's left child.
+2.2 Pop an item from stack and set it as root.
+    a) If the popped item has a right child and the right child 
+       is at top of stack, then remove the right child from stack,
+       push the root back and set root as root's right child.
+    b) Else print root's data and set root as NULL.
+2.3 Repeat steps 2.1 and 2.2 while stack is not empty.
+
+
+Level order traversal
+Level-order traversal uses a queue.
+Level-order scheme visits the root first, then the root’s left child, followed by the root’s right child.
+All the node at a level are visited before moving down to another level
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 #define MAX 20
