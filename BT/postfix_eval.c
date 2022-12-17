@@ -79,7 +79,7 @@ int checkOperator(char ele){
     }
 }
 
-NODE* createExpression(char* postfix){
+NODE* createBinTree(char* postfix){
     NODE* root = NULL;
     NODE* temp;
     STACK* s = init();
@@ -123,7 +123,7 @@ int main(){
     scanf("%s",postfix);
 
     printf("Expression tree for postfix expression:\n");
-    NODE* root = createExpression(postfix);
+    NODE* root = createBinTree(postfix);
     
     int res = eval(root);
     printf("The result is:%d\n",res);
