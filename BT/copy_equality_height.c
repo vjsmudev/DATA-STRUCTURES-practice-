@@ -72,6 +72,20 @@ int height(NODE* root){
     return (1+ max(height(root->left), height(root->right)));
 }
 
+/*getLeafCount(node)
+1) If node is NULL then return 0.
+2) Else If left and right child nodes are NULL return 1.
+3) Else recursively calculate leaf count of the tree using below formula.
+    Leaf count of a tree = Leaf count of left subtree +  Leaf count of right subtree*/
+int getLeafNodeCount(NODE* temp){
+    if(temp == NULL)
+        return 0;
+    if(temp->left == NULL && temp->right == NULL)
+        return 1;
+    else
+        return getLeafNodeCount(temp->left) + getLeafNodeCount(temp->right); 
+}
+
 int main(){
     NODE* root = createTree();
     NODE* cpy = copy(root);
@@ -84,5 +98,7 @@ int main(){
     }
 
     printf("The height of the tree is: %d\n",height(root));
+
+    printf("Leaf node count of the tree is: %d\n", getLeafNodeCount(root));
     return 0;
 }
