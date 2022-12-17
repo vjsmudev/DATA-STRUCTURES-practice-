@@ -207,6 +207,20 @@ QUEUE* initq(){
     return q; 
 }
 
+int isEmpty(QUEUE* q){
+    if(q->rear == q->front){
+        return 1;
+    }
+    return 0;
+}
+
+int isFull(QUEUE* q){
+    if((q->rear+1) % MAX == q->front){
+        return 1;
+    }
+    return 0;
+}
+
 void enqueue(QUEUE *q,NODE *ele){
     q->rear = (q->rear+1) % MAX;
     q->arr[q->rear] = ele;
@@ -236,7 +250,7 @@ void levelOrder(NODE* root){
     NODE *curr = NULL;
     enqueue(q,root);
 
-    while (curr = dequeue(q)){
+    while (!isEmpty(q)){
         printf("%c ",curr->data);
         if(curr->left)
             enqueue(q, curr->left);
