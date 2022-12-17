@@ -58,6 +58,19 @@ int isEqual(NODE* root1, NODE* root2){
     }
     return isEqual(root1->left, root2->left) && isEqual(root1->right, root2->right); 
 }
+int max(int a, int b){
+	if(a>b)
+		return a;
+	else
+		return b;
+}
+
+int height(NODE* root){
+    if(root == NULL){
+        return 0;
+    }
+    return (1+ max(height(root->left), height(root->right)));
+}
 
 int main(){
     NODE* root = createTree();
@@ -69,6 +82,7 @@ int main(){
     else{
         printf("The tree's are not equal");
     }
-    
+
+    printf("The height of the tree is: %d\n",height(root));
     return 0;
 }
