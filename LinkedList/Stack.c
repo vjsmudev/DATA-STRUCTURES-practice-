@@ -1,3 +1,4 @@
+//don't refer this code
 #include<stdlib.h>
 #include<stdio.h>
 
