@@ -66,17 +66,8 @@ int isFull(STACK* s){
     return 0;
 }
 
-int checkOperator(char ele){
-    switch (ele){
-    case '+':
-    case '-':
-    case '*':
-    case '/':
-    case '%':
-        return 1;
-    default:
-        return 0;
-    }
+int isOperator(char c) {
+  return ( c == '+' || c == '-' || c == '*' || c == '/');
 }
 
 NODE* createBinTree(char* postfix){
