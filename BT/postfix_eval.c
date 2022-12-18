@@ -1,11 +1,3 @@
-/*
-1.Scan the expression from left to right.
-2.Create a node for each symbol encountered.
-3.If the symbol is an operand, push the corresponding node on to the stack.
-4.If the symbol is an operator, pop top node from stack and attach it to the right of the node with the operator. 
-Next pop present top node and attach it to the left of node with the operator. Push the operator node to the stack.
-5.Repeat the process for each symbol in postfix expression. Finally address of root node of expression tree is on top of stack.   
-*/
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -69,6 +61,15 @@ int isFull(STACK* s){
 int isOperator(char c) {
   return ( c == '+' || c == '-' || c == '*' || c == '/');
 }
+
+/*
+1.Scan the expression from left to right.
+2.Create a node for each symbol encountered.
+3.If the symbol is an operand, push the corresponding node on to the stack.
+4.If the symbol is an operator, pop top node from stack and attach it to the right of the node with the operator. 
+Next pop present top node and attach it to the left of node with the operator. Push the operator node to the stack.
+5.Repeat the process for each symbol in postfix expression. Finally address of root node of expression tree is on top of stack.   
+*/
 
 NODE* createBinTree(char* postfix){
     NODE* root = NULL;
