@@ -167,7 +167,7 @@ void postOrder(NODE *root){
             root = root->right; //change root so the next child is processed
         }
         else{
-            printf("%c",root->data);
+            printf(" %c ",root->data);
             root = NULL;
         }
     } while (!isEmpty(s)); 
@@ -207,14 +207,14 @@ QUEUE* initq(){
     return q; 
 }
 
-int isEmpty(QUEUE* q){
+int Empty(QUEUE* q){
     if(q->rear == q->front){
         return 1;
     }
     return 0;
 }
 
-int isFull(QUEUE* q){
+int Full(QUEUE* q){
     if((q->rear+1) % MAX == q->front){
         return 1;
     }
@@ -250,7 +250,7 @@ void levelOrder(NODE* root){
     NODE *curr = NULL;
     enqueue(q,root);
 
-    while (!isEmpty(q)){
+    while (!Empty(q)){
         printf("%c ",curr->data);
         if(curr->left)
             enqueue(q, curr->left);
