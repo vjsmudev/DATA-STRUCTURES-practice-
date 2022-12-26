@@ -14,7 +14,7 @@ NODE* createNode(int ele){
     return newnode;
 }
 
-void inorder(NODE* root){2
+void inorder(NODE* root){
 
     if(root != NULL){
         inorder(root->left);
