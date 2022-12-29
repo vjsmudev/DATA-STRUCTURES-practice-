@@ -1,3 +1,7 @@
+/*Write a function Reverse to reverse the elements of an integer array using pointer.
+Access the elements of the array using dereference operator. Read the values from
+the keyboard in main function. Display the result in the main function.*/
+
 #include<stdio.h>
 #include<stdlib.h>
 
