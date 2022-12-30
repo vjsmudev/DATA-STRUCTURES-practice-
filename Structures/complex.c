@@ -46,7 +46,7 @@ int main(){
 
     c = sub(a,b);
     printf("\nResult after subtracting:\n");
-    printf("%f + i%f",c.real,c.imaginary);
+    printf("%f - i%f",c.real,c.imaginary);
 
     c = product(a,b);
     printf("Result after multiplying:\n");
